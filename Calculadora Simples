@@ -1,0 +1,37 @@
+print('Calculadora')
+
+n1_str = input ('Digite um número: ')
+operacao = input('Operação desejada: ')
+n2_str = input ('Digite um número: ')
+
+try:
+    n1 = float(n1_str)
+    n2 = float(n2_str)
+except ValueError:
+    print("Digite um número válido.")
+    exit()
+
+resultado = 0
+
+if operacao == '+':
+    resultado = n1 + n2
+elif operacao == '-':
+    resultado = n1 - n2
+elif operacao == '*':
+    resultado = n1 * n2
+elif operacao == '/':
+    if n2 != 0:
+        resultado = n1 / n2
+    else:
+        print('Divisão por 0')
+        resultado = 'ERRO'
+elif operacao == '%':
+    if n2 != 0:
+        resultado = n1 % n2
+    else: 
+        print('ERRO')
+else:
+    print('Escolha uma operação válida.')
+
+
+print(f'Resultado: {resultado}')
